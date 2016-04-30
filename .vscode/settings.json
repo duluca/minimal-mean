@@ -1,0 +1,23 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.tabSize": 2,
+    "standard.options": {
+        "globals": ["$", "describe", "it", "expect", "beforeEach", "spyOn", "jasmine"],
+        "parser": "babel-eslint",
+        "ignore": [
+            "node_modules/**",
+            "public/**",
+            "tmp/**",
+            "scratch/**"
+        ]
+    },
+    "editor.rulers": [120],
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.js": {"when": "$(basename).ts"},
+        "**/*.js.map": {"when": "$(basename)"}
+    },
+    "files.autoSave": "afterDelay"
+}

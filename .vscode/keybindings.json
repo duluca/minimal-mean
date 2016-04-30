@@ -1,0 +1,5 @@
+{
+  "key": "shift+cmd+f",
+  "command": "format.standard",
+  "when": "editorTextFocus"
+}
