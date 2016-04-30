@@ -1,0 +1,55 @@
+{
+  "name": "minimal-mean",
+  "version": "1.0.0",
+  "description": "Easy to learn and use full-stack TypeScript with Angular 2",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "gulp build",
+    "start": "node server/index",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/excellalabs/minimal-mean.git"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "ng2",
+    "node"
+  ],
+  "author": "Doguhan Uluca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/excellalabs/minimal-mean/issues"
+  },
+  "homepage": "https://github.com/excellalabs/minimal-mean#readme",
+  "dependencies": {
+    "angular2": "2.0.0-beta.16",
+    "bluebird": "^3.3.5",
+    "body-parser": "^1.15.0",
+    "es6-shim": "^0.35.0",
+    "express": "^4.13.4",
+    "lodash": "^4.11.1",
+    "mongodb": "^2.1.18",
+    "morgan": "^1.7.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.26",
+    "zone.js": "0.6.12"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1",
+    "del": "2.2.0",
+    "gulp": "3.9.0",
+    "gulp-concat": "2.6.0",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-typescript": "2.10.0",
+    "run-sequence": "1.1.5"
+  }
+}
