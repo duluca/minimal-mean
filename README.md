@@ -15,4 +15,5 @@ It can be daunting to pick the right stack to deliver your idea to the cloud. Wi
 - `npm install`
 
 ## Run
+- `gulp build`
 - `npm start`

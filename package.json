@@ -8,7 +8,6 @@
     "npm": "3.8.8"
   },
   "scripts": {
-    "prestart": "gulp build",
     "start": "node server/index",
     "postinstall": "typings install",
     "tsc": "tsc",
