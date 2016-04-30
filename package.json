@@ -2,14 +2,13 @@
   "name": "minimal-mean",
   "version": "1.0.0",
   "description": "Easy to learn and use full-stack TypeScript with Angular 2",
-  "main": "index.js",
+  "main": "server/index.js",
   "engines": {
     "node": "6.0.0",
-    "npm": "3.8.8"
+    "npm": "3.8.6"
   },
   "scripts": {
-    "start": "node server/index",
-    "postinstall": "typings install",
+    "start": "node server/index.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings"
@@ -42,7 +41,6 @@
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
     "systemjs": "0.19.26",
-    "typings": "^0.8.1",
     "zone.js": "0.6.12"
   },
   "devDependencies": {
@@ -53,6 +51,6 @@
     "gulp-concat": "2.6.0",
     "gulp-sourcemaps": "1.6.0",
     "gulp-typescript": "2.10.0",
-    "run-sequence": "1.1.5"
+    "typings": "^0.8.1"
   }
 }
