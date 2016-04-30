@@ -6,7 +6,6 @@ var sourcemaps = require('gulp-sourcemaps')
 var ts = require('gulp-typescript')
 var del = require('del')
 var concat = require('gulp-concat')
-var runSequence = require('run-sequence')
 
 // SERVER
 gulp.task('clean', function () {
