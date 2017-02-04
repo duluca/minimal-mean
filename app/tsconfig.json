@@ -10,8 +10,6 @@
     "noImplicitAny": false
   },
   "exclude": [
-    "static",
-    "typings/main",
-    "typings/main.d.ts"
+    "static"
   ]
 }

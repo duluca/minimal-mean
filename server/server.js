@@ -1,9 +1,9 @@
 "use strict";
-const http = require('http');
-const path = require('path');
-const express = require('express');
-const bodyParser = require('body-parser');
-const logger = require('morgan');
+const http = require("http");
+const path = require("path");
+const express = require("express");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
 var app = express();
 // Configuration
 // TODO: configure Angular Universal - https://github.com/angular/universal

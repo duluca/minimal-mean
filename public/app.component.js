@@ -22,7 +22,7 @@ System.register(['angular2/core'], function(exports_1) {
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'ng-app',
-                        template: '<h1>My First Angular 2 App</h1>'
+                        template: '<h1>Welcome to Minimal MEAN</h1>'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
@@ -33,4 +33,4 @@ System.register(['angular2/core'], function(exports_1) {
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOlsiQXBwQ29tcG9uZW50IiwiQXBwQ29tcG9uZW50LmNvbnN0cnVjdG9yIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFFQTtnQkFBQUE7Z0JBSzRCQyxDQUFDQTtnQkFMN0JEO29CQUFDQSxnQkFBU0EsQ0FBQ0E7d0JBQ1RBLFFBQVFBLEVBQUVBLFFBQVFBO3dCQUNsQkEsUUFBUUEsRUFBRUEsaUNBQWlDQTtxQkFDNUNBLENBQUNBOztpQ0FFMkJBO2dCQUFEQSxtQkFBQ0E7WUFBREEsQ0FMNUIsQUFLNkJBLElBQUE7WUFMN0IsdUNBSzZCLENBQUEiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q29tcG9uZW50fSBmcm9tICdhbmd1bGFyMi9jb3JlJ1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICduZy1hcHAnLFxuICB0ZW1wbGF0ZTogJzxoMT5NeSBGaXJzdCBBbmd1bGFyIDIgQXBwPC9oMT4nXG59KVxuXG5leHBvcnQgY2xhc3MgQXBwQ29tcG9uZW50IHsgfSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOlsiQXBwQ29tcG9uZW50IiwiQXBwQ29tcG9uZW50LmNvbnN0cnVjdG9yIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFFQTtnQkFBQUE7Z0JBSzRCQyxDQUFDQTtnQkFMN0JEO29CQUFDQSxnQkFBU0EsQ0FBQ0E7d0JBQ1RBLFFBQVFBLEVBQUVBLFFBQVFBO3dCQUNsQkEsUUFBUUEsRUFBRUEsa0NBQWtDQTtxQkFDN0NBLENBQUNBOztpQ0FFMkJBO2dCQUFEQSxtQkFBQ0E7WUFBREEsQ0FMNUIsQUFLNkJBLElBQUE7WUFMN0IsdUNBSzZCLENBQUEiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q29tcG9uZW50fSBmcm9tICdhbmd1bGFyMi9jb3JlJ1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICduZy1hcHAnLFxuICB0ZW1wbGF0ZTogJzxoMT5XZWxjb21lIHRvIE1pbmltYWwgTUVBTjwvaDE+J1xufSlcblxuZXhwb3J0IGNsYXNzIEFwcENvbXBvbmVudCB7IH0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
