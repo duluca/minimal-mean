@@ -10,10 +10,11 @@ It can be daunting to pick the right stack to deliver your idea to the cloud. Wi
 ## Setup
 - Install [Node.js](https://nodejs.org/en/)
 - Recommended Editor/IDE: [Visual Studio Code](https://code.visualstudio.com/)
-- `npm install -g typescript gulp typings`
-- For StandardJS support `npm install -g babel-eslint` and `ext install standardjs` in Visual Studio Code ⌘-P/ctrl-P
+- `npm install -g typescript gulp`
 - `npm install`
-- `typings install`
+
+Optional:
+- For StandardJS support `npm install -g babel-eslint` and `ext install standardjs` in Visual Studio Code ⌘-P/ctrl-P
 
 ## Run
 - `gulp build`
