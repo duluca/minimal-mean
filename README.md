@@ -1,6 +1,10 @@
 # Minimal MEAN
 Easy to learn and use full-stack TypeScript with Angular 2
 
+See the live demo at https://mm.mod.bz/
+
+Looking for Angular 1.5 Material starter? See demo at http://ng15demo.thejavascriptpromise.com/ and get the source code at https://github.com/duluca/angular1.5-starter
+
 ## Getting Started
 Are you an absolute beginner or season veteran? Start your JavaScript journey today at http://thejavascriptpromise.com
 
@@ -19,6 +23,10 @@ Optional:
 ## Run
 - `gulp build`
 - `npm start`
+
+## Continuous Integration and Hosting
+- CI is implemented on http://CodeShip.io
+- Cloud-Scale Hosting is on http://Xervo.io
 
 ## TODO
 - [ ] Use Angular CLI https://github.com/angular/angular-cli for client-side app setup
