@@ -31,6 +31,7 @@ Optional:
 ## TODO
 - [ ] Use Angular CLI https://github.com/angular/angular-cli for client-side app setup
 - [ ] Add Angular Material https://github.com/angular/material2/blob/master/guides/getting-started.md
+- [ ] Material, working examples https://material2-app.firebaseapp.com/ and https://github.com/kara/leashed-in
 - [ ] HTTPS using Let's Encrypt
 - [ ] Sanitize inputs using TypeScript interfaces with https://www.npmjs.com/package/validator.ts
 - [ ] Dockerize, because https://gist.github.com/duluca/25de70e41347f38b2283ef90ed69840a
