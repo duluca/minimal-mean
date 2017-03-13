@@ -34,3 +34,4 @@ Optional:
 - [ ] HTTPS using Let's Encrypt
 - [ ] Sanitize inputs using TypeScript interfaces with https://www.npmjs.com/package/validator.ts
 - [ ] Dockerize, because https://gist.github.com/duluca/25de70e41347f38b2283ef90ed69840a
+- [ ] Simplify build process to only really on npm scripts https://gist.github.com/duluca/4468df69f04d60478af824c23fe094f9
