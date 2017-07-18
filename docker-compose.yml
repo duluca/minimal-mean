@@ -4,14 +4,14 @@ services:
   web-app:
     build: web-app
     ports:
-      - "8080:3000"
+      - '8080:3000'
 
   server:
     build: server
     environment:
       - MONGO_URI=mongodb://database/minimal-mean
     ports:
-      - "3000:3000"
+      - '3000:3000'
     depends_on:
       - database
     links:
@@ -20,4 +20,6 @@ services:
   database:
     image: mongo
     ports:
-      - "27017:27017"
+      - '27017:27017'
+#   volumes:
+#     - '/my/own/datadir:/data/db'
