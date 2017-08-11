@@ -1,8 +1,6 @@
 # Minimal MEAN
 Easy to learn and use full-stack TypeScript with Angular
 
-See the live demo at https://mm.mod.bz/
-
 Looking for Angular 1.5 Material starter? See demo at http://ng15demo.thejavascriptpromise.com/ and get the source code at https://github.com/duluca/angular1.5-starter
 
 ## Getting Started
