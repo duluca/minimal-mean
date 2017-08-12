@@ -18,8 +18,9 @@ services:
       - database
 
   database:
-    image: mongo
+    image: excellalabs/mongo
+    env_file: .env
     ports:
       - '27017:27017'
-#   volumes:
-#     - '/my/own/datadir:/data/db'
+    volumes:
+     - '/data/db:/data/db'
