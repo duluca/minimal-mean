@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "description": "Easy to learn and use full-stack TypeScript with Angular",
   "main": "index.js",
-  "engines": {
-    "node": "6.10.1",
-    "npm": "3.10.10"
-  },
   "scripts": {
     "preinstall": "node bin/preinstall",
-    "start": "docker-compose up"
+    "start": "docker-compose up",
+    "stop": "docker-compose down",
+    "rimraf": "rimraf node_modules && rimraf server/node_modules && rimraf web-app/node_modules"
   },
   "repository": {
     "type": "git",
@@ -26,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/excellalabs/minimal-mean/issues"
   },
-  "homepage": "https://github.com/excellalabs/minimal-mean#readme"
+  "homepage": "https://github.com/excellalabs/minimal-mean#readme",
+  "devDependencies": {
+    "rimraf": "^2.6.1"
+  }
 }

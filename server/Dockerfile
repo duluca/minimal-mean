@@ -1,4 +1,4 @@
-FROM alpine
+FROM node:8.3-alpine
 MAINTAINER Doguhan Uluca <duluca@gmail.com>
 
 RUN apk --update --no-progress add nodejs unrar bash git

@@ -16,9 +16,18 @@ It can be daunting to pick the right stack to deliver your idea to the cloud. Wi
 ## Setup
 - Install [Node.js](https://nodejs.org/en/)
 - Recommended Editor/IDE: [Visual Studio Code](https://code.visualstudio.com/)
-- `npm install -g typescript`
 - `npm install`
  - This will kick off a script, which will run `npm install` on all child folders.
+- Define a `.env` file at the root of the project and set the MongoDB admin passowrd. Do NOT commit this file.
+```Bash
+MONGODB_ADMIN_PASS=your_password_goes_here
+MONGODB_APPLICATION_DATABASE=app_db_name
+MONGODB_APPLICATION_USER=app_user
+MONGODB_APPLICATION_PASS=app_password
+```
+
+> In your server application use the application information to connect to the database.
+Sample connection URI: `mongodb://app_user:app_password@localhost:27017/app_db_name?readPreference=primary`
 
 ## Run
 - `npm start`
@@ -42,4 +51,4 @@ It can be daunting to pick the right stack to deliver your idea to the cloud. Wi
 - [ ] HTTPS using Let's Encrypt
 - [ ] Sanitize inputs using TypeScript interfaces with https://www.npmjs.com/package/validator.ts
 - [x] Dockerize, because https://gist.github.com/duluca/25de70e41347f38b2283ef90ed69840a
-- [x] Simplify build process to only really on npm scripts https://gist.github.com/duluca/4468df69f04d60478af824c23fe094f9
+- [x] Simplify build process to only rely on npm scripts https://gist.github.com/duluca/4468df69f04d60478af824c23fe094f9

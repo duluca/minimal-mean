@@ -37,3 +37,4 @@ server/**/*.js
 server/**/*.js.map
 
 .env
+db-data
