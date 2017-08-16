@@ -25,7 +25,7 @@ MONGODB_APPLICATION_DATABASE=app_db_name
 MONGODB_APPLICATION_USER=app_user
 MONGODB_APPLICATION_PASS=app_password
 ```
-
+- See more details about the MongoDB Docker container at [excellalabs/mongo](https://github.com/excellalabs/mongo-docker) which also contains instructions on how to set things up on AWS ECS.
 > In your server application use the application information to connect to the database.
 Sample connection URI: `mongodb://app_user:app_password@localhost:27017/app_db_name?readPreference=primary`
 
