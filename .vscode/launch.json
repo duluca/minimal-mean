@@ -2,13 +2,13 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch",
+			"name": "Launch Server",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceRoot}/server/index.js",
+			"program": "${workspaceRoot}/server/dist/index.js",
 			"stopOnEntry": false,
 			"args": [],
-			"cwd": "${workspaceRoot}",
+			"cwd": "${workspaceRoot}/server",
 			"preLaunchTask": null,
 			"runtimeExecutable": null,
 			"runtimeArgs": [
@@ -17,21 +17,7 @@
 			"env": {
 				"NODE_ENV": "development"
 			},
-			"externalConsole": false,
-			"sourceMaps": true,
-			"outDir": null
-		},
-		{
-			"name": "Attach",
-			"type": "node",
-			"request": "attach",
-			"port": 5858,
-			"address": "localhost",
-			"restart": false,
-			"sourceMaps": false,
-			"outDir": null,
-			"localRoot": "${workspaceRoot}",
-			"remoteRoot": null
+			"sourceMaps": true
 		}
 	]
 }

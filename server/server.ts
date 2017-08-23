@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(logger('dev'))
 
-app.route('/').get(function(req, res) {
+app.route('/').get(function(req: express.Request, res: express.Response) {
   res.send('server works!')
 })
 

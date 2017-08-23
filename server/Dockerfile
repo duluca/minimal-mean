@@ -1,14 +1,12 @@
-FROM node:8.3-alpine
+FROM node:8.4-alpine
 MAINTAINER Doguhan Uluca <duluca@gmail.com>
 
-RUN apk --update --no-progress add nodejs unrar bash git
+ENV NPM_CONFIG_LOGLEVEL error
 
-ADD https://github.com/Yelp/dumb-init/releases/download/v1.1.1/dumb-init_1.1.1_amd64 /usr/local/bin/dumb-init
+ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /usr/local/bin/dumb-init
 RUN chmod +x /usr/local/bin/dumb-init
 
 RUN mkdir -p /usr/src/app
-
-RUN npm install -g typescript
 
 RUN adduser -S nodejs
 RUN chown nodejs: /usr/src/app
@@ -26,6 +24,7 @@ ENV HOST "0.0.0.0"
 ENV PORT 3000
 EXPOSE 3000
 
-COPY . .
+COPY dist .
 
-CMD [ "dumb-init", "npm", "start" ]
+ENTRYPOINT ["dumb-init", "--"]
+CMD [ "npm", "start" ]
