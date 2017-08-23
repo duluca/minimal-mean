@@ -12,9 +12,7 @@
     "outDir": "./dist",
     "strict": true
   },
-  "exclude": [
-    "node_modules",
-    "tests",
-    "dist"
+  "include": [
+    "./src"
   ]
 }

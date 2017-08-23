@@ -8,15 +8,13 @@ import * as cors from 'cors'
 
 var app = express()
 
-// Configuration
-// TODO: configure Angular Universal - https://github.com/angular/universal
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(logger('dev'))
 
 app.route('/').get(function(req: express.Request, res: express.Response) {
-  res.send('server works!')
+  res.send('Server is up and running. Web app is hosted <a href="http://localhost:8080">here</a>.')
 })
 
 export var Instance = http.createServer(app)

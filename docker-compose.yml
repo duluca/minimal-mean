@@ -18,9 +18,9 @@ services:
       - database
 
   database:
-    image: excellalabs/mongo
+    image: excellalabs/mongo:3.4.7
     env_file: .env
     ports:
       - '27017:27017'
     volumes:
-     - '/tmp/minimal-mean:/data/db'
+     - '/tmp/minimal-mean-db:/data/db'

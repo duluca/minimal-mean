@@ -1,4 +1,4 @@
-import { Instance } from '../server'
+import { Instance } from '../src/server'
 import { connect } from 'document-ts'
 
 const MongoInMemory = require('mongo-in-memory')
