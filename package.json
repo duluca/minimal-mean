@@ -11,6 +11,7 @@
     "start": "docker-compose up",
     "stop": "docker-compose down",
     "clean": "docker-compose rm",
+    "start:database": "docker run --env-file .env -d -p '27017:27017' -v '/tmp/minimal-mean-db:/data/db' excellalabs/mongo:3.4.7",
     "rimraf": "rimraf node_modules && rimraf server/node_modules && rimraf web-app/node_modules"
   },
   "repository": {

@@ -44,11 +44,17 @@ MONGO_URI=mongodb://john.smith:g00fy@database/acme
 ```
 ## Run
 - From the root directory run `npm start`
- - This will kick off `docker-compose up` which will build and configure your web app, server and database.
- - Web App: http://localhost:8080
- - Server: http://localhost:3000
- - Database: http://localhost:27017
- - Run `npm stop` or `npm clean` to stop or clean Docker's cache.
+  - This will kick off `docker-compose up` which will build and configure your web app, server and database.
+  - Angular Web App: http://localhost:8080
+  - Server: http://localhost:3000
+  - Database: http://localhost:27017
+- Run `npm stop` or `npm clean` to stop or clean Docker's cache.
+
+## Development
+- For development purposes run each service individually
+  - Angular Web App: `cd web-app` then `npm start` -- which utilizes `ng serve` and will give you livereload.
+  - Server: `cd server` then `npm start` or use the debugger within VS Code
+  - Database: `npm start:database` from the root
 
 ## Architecture
 - web-app: This folder contains the client side Angular app, configured using [Angular CLI](https://github.com/angular/angular-cli) along with its own individual Node.js server
@@ -62,10 +68,9 @@ MONGO_URI=mongodb://john.smith:g00fy@database/acme
 
 ## TODO
 - [x] Use Angular CLI https://github.com/angular/angular-cli for client-side app setup
-- [ ] Add Angular Material https://github.com/angular/material2/blob/master/guides/getting-started.md
-- [ ] Material, working examples https://material2-app.firebaseapp.com/ and https://github.com/kara/leashed-in
+- [x] Add Angular Material https://github.com/angular/material2/blob/master/guides/getting-started.md
 - [ ] HTTPS using Let's Encrypt
 - [ ] Sanitize inputs using TypeScript interfaces with https://www.npmjs.com/package/validator.ts
 - [x] Dockerize, because https://gist.github.com/duluca/25de70e41347f38b2283ef90ed69840a
 - [x] Simplify build process to only rely on npm scripts https://gist.github.com/duluca/4468df69f04d60478af824c23fe094f9
-- [ ] Docker Compose Deployment to AWS ECS https://medium.com/@Electricste/amazon-ecs-using-the-cli-with-docker-compose-74287f19b181 http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose.html http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-service.html
+- [-] Docker Compose Deployment to AWS ECS https://medium.com/@Electricste/amazon-ecs-using-the-cli-with-docker-compose-74287f19b181 http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose.html http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-service.html
