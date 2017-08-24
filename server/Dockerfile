@@ -1,6 +1,7 @@
 FROM node:8.4-alpine
 MAINTAINER Doguhan Uluca <duluca@gmail.com>
 
+RUN apk add --update --no-progress make python bash
 ENV NPM_CONFIG_LOGLEVEL error
 
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /usr/local/bin/dumb-init
@@ -16,6 +17,7 @@ USER nodejs
 WORKDIR /usr/src/app
 
 COPY package.json .
+COPY npm-shrinkwrap.json .
 RUN NODE_ENV=production
 
 RUN npm install --only=production
@@ -27,4 +29,4 @@ EXPOSE 3000
 COPY dist .
 
 ENTRYPOINT ["dumb-init", "--"]
-CMD [ "npm", "start" ]
+CMD ["node", "index"]

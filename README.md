@@ -28,17 +28,27 @@ MONGODB_ADMIN_PASS=your_password_goes_here
 MONGODB_APPLICATION_DATABASE=app_db_name
 MONGODB_APPLICATION_USER=app_user
 MONGODB_APPLICATION_PASS=app_password
+MONGO_URI=uri_to_mongodb
 ```
 - See more details about the MongoDB Docker container at [excellalabs/mongo](https://github.com/excellalabs/mongo-docker) which also contains instructions on how to set things up on AWS ECS.
 > In your server application use the application information to connect to the database.
 Sample connection URI: `mongodb://app_user:app_password@localhost:27017/app_db_name?readPreference=primary`
 
+- Sample `.env` file. **Note:** In configuring the `MONGO_URI`, instead of localhost or an IP address, you must specify `database` which is the name of the container as defined in `docker-compose.yml` file.
+```Bash
+MONGODB_ADMIN_PASS=admin
+MONGODB_APPLICATION_DATABASE=acme
+MONGODB_APPLICATION_USER=john.smith
+MONGODB_APPLICATION_PASS=g00fy
+MONGO_URI=mongodb://john.smith:g00fy@database/acme
+```
 ## Run
-- `npm start`
- - This will kick off `docker-compose up` which will configure your web app, server and database.
+- From the root directory run `npm start`
+ - This will kick off `docker-compose up` which will build and configure your web app, server and database.
  - Web App: http://localhost:8080
  - Server: http://localhost:3000
  - Database: http://localhost:27017
+ - Run `npm stop` or `npm clean` to stop or clean Docker's cache.
 
 ## Architecture
 - web-app: This folder contains the client side Angular app, configured using [Angular CLI](https://github.com/angular/angular-cli) along with its own individual Node.js server

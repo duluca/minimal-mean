@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "node bin/preinstall",
+    "build": "npm run build --prefix ./server && npm run build --prefix ./web-app",
+    "test": "npm test --prefix ./server && npm test --prefix ./web-app",
+    "prestart": "npm run build && docker-compose build",
     "start": "docker-compose up",
     "stop": "docker-compose down",
+    "clean": "docker-compose rm",
     "rimraf": "rimraf node_modules && rimraf server/node_modules && rimraf web-app/node_modules"
   },
   "repository": {
@@ -16,11 +20,11 @@
   "keywords": [
     "angular",
     "typescript",
-    "ng2",
-    "node"
+    "node",
+    "mongo"
   ],
   "author": "Doguhan Uluca",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/excellalabs/minimal-mean/issues"
   },
