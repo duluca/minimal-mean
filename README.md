@@ -84,8 +84,8 @@ MONGO_URI=mongodb://john.smith:g00fy@localhost:27017/acme
 ## TODO
 - [x] Use Angular CLI https://github.com/angular/angular-cli for client-side app setup
 - [x] Add Angular Material https://github.com/angular/material2/blob/master/guides/getting-started.md
-- [ ] HTTPS using Let's Encrypt
-- [ ] Sanitize inputs using TypeScript interfaces with https://www.npmjs.com/package/validator.ts
 - [x] Dockerize, because https://gist.github.com/duluca/25de70e41347f38b2283ef90ed69840a
 - [x] Simplify build process to only rely on npm scripts https://gist.github.com/duluca/4468df69f04d60478af824c23fe094f9
-- [-] Docker Compose Deployment to AWS ECS https://medium.com/@Electricste/amazon-ecs-using-the-cli-with-docker-compose-74287f19b181 http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose.html http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-service.html
+- [x] Docker Compose Deployment to AWS ECS https://medium.com/@Electricste/amazon-ecs-using-the-cli-with-docker-compose-74287f19b181 http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose.html http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-service.html
+- [ ] HTTPS using Let's Encrypt
+- [ ] Sanitize inputs using TypeScript interfaces with https://www.npmjs.com/package/validator.ts
