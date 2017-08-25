@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "node bin/preinstall",
-    "build": "npm run build --prefix ./server && npm run build --prefix ./web-app",
-    "test": "npm test --prefix ./server && npm test --prefix ./web-app",
+    "build": "npm run build --prefix ./server && npm run build --prefix ./web-app -- --prod",
+    "test": "npm test --prefix ./server && npm test --prefix ./web-app -- --single-run",
     "prestart": "npm run build && docker-compose build",
     "start": "docker-compose up",
     "stop": "docker-compose down",
