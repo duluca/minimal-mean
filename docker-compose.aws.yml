@@ -1,16 +1,16 @@
 version: '2'
 services:
   web-app:
-    build: web-app
+    image: duluca/minimal-mean-web-app
     ports:
-      - '4200:3000'
+      - '80:3000'
     links:
       - server
     # depends_on:
     #   - server
 
   server:
-    build: server
+    image: duluca/minimal-mean-server
     env_file: .env
     ports:
       - '3000:3000'

@@ -1,5 +1,6 @@
 # Minimal MEAN
 Easy to learn and use full-stack TypeScript with Angular
+[Demo Site](http://minimalmean.excellalabs.com/)
 
 **Watch the video:** [Do More with Less: Full Stack TypeScript](https://youtu.be/gi1neXh0uKE?list=PLtevgo7IoQizTQdXtRKEXGguTQbL0F01_)
 
@@ -72,7 +73,13 @@ MONGO_URI=mongodb://john.smith:g00fy@localhost:27017/acme
 
 ## Continuous Integration and Hosting
 - CI _will_ be implemented on CircleCI
-- Hosting _will_ be on AWS ECS: https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832
+- Hosted on AWS ECS
+  - You'll need to individually publish your Docker containers to ECS
+  - Then update `docker-compose.aws.yml` to pull from the ECS repository
+  - Run `npm run publish:aws` on the root folder to create the task definition
+  - You'll need to create a new service and attach this task definition to it
+  - See the AWS ECS Guide on how to create container repositories, and attaching a task definition to a service: https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832
+
 
 ## TODO
 - [x] Use Angular CLI https://github.com/angular/angular-cli for client-side app setup

@@ -13,7 +13,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "publish:now": "npm run build && now --public --docker",
-    "docker:build": "npm run build && with-package docker image build . -t pkg.imageRepo:pkg.version && npm run docker:tag",
+    "docker:build": "npm run build -- --prod && with-package docker image build . -t pkg.imageRepo:pkg.version && npm run docker:tag",
     "docker:tag": "with-package docker image tag pkg.imageRepo:pkg.version pkg.imageRepo:latest",
     "docker:run": "npm run docker:clean && npm run docker:runHelper",
     "docker:runHelper": "with-package docker run --name pkg.imageName -d -p pkg.imagePort:3000 pkg.imageRepo",

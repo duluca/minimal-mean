@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
 import {HttpClient} from "@angular/common/http"
-
-const baseUrl = 'http://localhost:3000'
+import { environment as env } from '../../environments/environment'
 
 export interface IPaginatedData<T> {
   data: T[],
@@ -19,6 +18,6 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get<IPaginatedData<IUser>>(`${baseUrl}/user`)
+    return this.http.get<IPaginatedData<IUser>>(`${env.baseUrl}/user`)
   }
 }
