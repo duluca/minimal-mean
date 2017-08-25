@@ -18,7 +18,7 @@ It can be daunting to pick the right stack to deliver your idea to the cloud. Wi
 - Read more about why Docker is important [here](https://gist.github.com/duluca/25de70e41347f38b2283ef90ed69840a)
 
 ## Setup
-- Install [Node.js](https://nodejs.org/en/)
+- Install [Node.js](https://nodejs.org/en/) v8.3+
 - Recommended Editor/IDE: [Visual Studio Code](https://code.visualstudio.com/)
 - `npm install`
  - This will kick off a script, which will run `npm install` on all child folders.
@@ -52,8 +52,8 @@ MONGO_URI=mongodb://john.smith:g00fy@database/acme
 
 ## Development
 - For development purposes run each service individually
-  - Angular Web App: `cd web-app` then `npm start` -- which utilizes `ng serve` and will give you livereload.
-  - Server: `cd server` then `npm start` or use the debugger within VS Code
+  - Angular Web App: `cd web-app` then `npm start` -- which utilizes `ng serve` and will give you livereload. To debug use Augury
+  - Server: `cd server` then `npm start` or use the debugger within VS Code (debug configuration is already included)
   - Database: `npm start:database` from the root
 
 ## Architecture
@@ -63,8 +63,8 @@ MONGO_URI=mongodb://john.smith:g00fy@database/acme
 - [excellalabs/mongo](https://hub.docker.com/r/excellalabs/mongo/): A fully-featured Mongo image (with Auth and SSL) inherited from the official image.
 
 ## Continuous Integration and Hosting
-- CI is implemented on http://CodeShip.io
-- Cloud-Scale Hosting is on http://Xervo.io
+- CI _will_ be implemented on CircleCI
+- Hosting _will_ be on AWS ECS: https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832
 
 ## TODO
 - [x] Use Angular CLI https://github.com/angular/angular-cli for client-side app setup
