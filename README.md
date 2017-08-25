@@ -20,6 +20,9 @@ It can be daunting to pick the right stack to deliver your idea to the cloud. Wi
 ## Setup
 - Install [Node.js](https://nodejs.org/en/) v8.3+
 - Recommended Editor/IDE: [Visual Studio Code](https://code.visualstudio.com/)
+- For a **magical** development experience download these VS Code Extensions:
+  - [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+  - [Angular TypeScript Snippets](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2)
 - `npm install`
  - This will kick off a script, which will run `npm install` on all child folders.
 - Define a `.env` file at the root of the project and set the MongoDB admin passowrd. Do NOT commit this file.
@@ -42,6 +45,11 @@ MONGODB_APPLICATION_USER=john.smith
 MONGODB_APPLICATION_PASS=g00fy
 MONGO_URI=mongodb://john.smith:g00fy@database/acme
 ```
+- You need a seperate `.env` file under Server for development purposses. **Note:** We specify localhost, not the docker-compose name here.
+```Bash
+MONGO_URI=mongodb://john.smith:g00fy@localhost:27017/acme
+```
+
 ## Run
 - From the root directory run `npm start`
   - This will kick off `docker-compose up` which will build and configure your web app, server and database.

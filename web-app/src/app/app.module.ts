@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MdToolbarModule, MdButtonModule, MdInputModule, MdSnackBarModule, MdTableModule, MdIconModule, MdListModule } from "@angular/material"
+import { MaterialModule } from "@angular/material"
 
 import 'hammerjs'
 import { HomeComponent } from './home/home.component'
@@ -44,7 +44,7 @@ const appRoutes: Routes = [
     HttpModule, HttpClientModule,
     BrowserAnimationsModule,
     RouterModule,
-    MdToolbarModule, MdButtonModule, MdInputModule, MdSnackBarModule, MdTableModule, MdIconModule, MdListModule
+    MaterialModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]
