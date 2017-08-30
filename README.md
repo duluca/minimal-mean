@@ -18,6 +18,8 @@ It can be daunting to pick the right stack to deliver your idea to the cloud. Wi
 - Install [Docker CE](https://www.docker.com/community-edition)
 - Read more about why Docker is important [here](https://gist.github.com/duluca/25de70e41347f38b2283ef90ed69840a)
 
+> To avoid issues that aries from maintaining varying versions of Angular CLI and TypeScript across multiple projects, it is highly recommended that you do **not** globally install `@angular/cli` and `typescript`.
+
 ## Setup
 - Install [Node.js](https://nodejs.org/en/) v8.3+
 - Recommended Editor/IDE: [Visual Studio Code](https://code.visualstudio.com/)
