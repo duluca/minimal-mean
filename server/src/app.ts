@@ -13,7 +13,7 @@ app.use(logger('dev'))
 app.use('/docs', express.static('docs'))
 
 app.route('/').get(function(req: express.Request, res: express.Response) {
-  res.send('Server is up and running. Web app is hosted <a href="http://localhost:8080">here</a>.')
+  res.send('Server is up and running. Web app is hosted <a href="http://localhost:4200">here</a>.')
 })
 
 export default app

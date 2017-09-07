@@ -4,7 +4,7 @@
   "license": "MIT",
   "imageRepo": "duluca/minimal-mean-web-app",
   "imageName": "minimal-mean-web-app",
-  "imagePort": "8080",
+  "imagePort": "4200",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

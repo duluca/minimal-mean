@@ -56,7 +56,7 @@ MONGO_URI=mongodb://john.smith:g00fy@localhost:27017/acme
 ## Run
 - From the root directory run `npm start`
   - This will kick off `docker-compose up` which will build and configure your web app, server and database.
-  - Angular Web App: http://localhost:8080
+  - Angular Web App: http://localhost:4200
   - Server: http://localhost:3000
   - Database: http://localhost:27017
 - Run `npm stop` or `npm clean` to stop or clean Docker's cache.
