@@ -12,6 +12,5 @@
         "**/.DS_Store": true,
         "**/*.js": {"when": "$(basename).ts"},
         "**/*.js.map": {"when": "$(basename)"}
-    },
-    "vsicons.presets.angular": true
+    }
 }
