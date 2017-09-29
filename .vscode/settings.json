@@ -1,16 +1,25 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.tabSize": 2,
-    "editor.rulers": [120],
-    "files.trimTrailingWhitespace": true,
-    "files.autoSave": "onFocusChange",
-    "files.exclude": {
-        // "node_modules": true,
-        "*_TEMPLATE.md": true,
-        ".idea": true,
-        "**/.git": true,
-        "**/.DS_Store": true,
-        "**/*.js": {"when": "$(basename).ts"},
-        "**/*.js.map": {"when": "$(basename)"}
-    }
+  "editor.tabSize": 2,
+  "editor.rulers": [90, 140],
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "editor.cursorBlinking": "solid",
+  "workbench.iconTheme": "material-icon-theme",
+  "git.enableSmartCommit": true,
+  "editor.autoIndent": true,
+  "debug.openExplorerOnEnd": true,
+  "auto-close-tag.SublimeText3Mode": true,
+  "explorer.openEditors.visible": 0,
+  "editor.minimap.enabled": false,
+  "html.autoClosingTags": false,
+  "git.confirmSync": false,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "typescriptHero.resolver.insertSemicolons": false,
+  "prettier.printWidth": 90,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5"
 }
