@@ -1,12 +1,12 @@
 {
   "name": "minimal-mean",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Easy to learn and use full-stack TypeScript with Angular",
   "main": "index.js",
   "awsRegion": "us-east-1",
   "awsEcsCluster": "excella-prod-ecs-cluster",
   "scripts": {
-    "preinstall": "node bin/preinstall",
+    "postinstall": "npm-recursive-install --skip-root",
     "build": "npm run build --prefix ./server && npm run build --prefix ./web-app -- --prod --env=prod",
     "test": "npm test --prefix ./server && npm test --prefix ./web-app -- --single-run",
     "prestart": "npm run build && docker-compose build",
@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/excellalabs/minimal-mean#readme",
   "devDependencies": {
+    "recursive-install": "^1.4.0",
     "rimraf": "^2.6.1",
     "with-package": "^0.2.0"
   }

@@ -3,7 +3,7 @@ services:
   web-app:
     build: web-app
     ports:
-      - '4200:3000'
+      - '8080:80'
     links:
       - server
     # depends_on:
@@ -20,9 +20,9 @@ services:
     #   - database
 
   database:
-    image: excellalabs/mongo:3.4.7
+    image: excellalabs/mongo
     env_file: .env
     ports:
       - '27017:27017'
     volumes:
-     - '/tmp/minimal-mean-db:/data/db'
+      - '/tmp/minimal-mean-db:/data/db'
