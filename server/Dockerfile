@@ -16,7 +16,7 @@ USER nodejs
 WORKDIR /usr/src/app
 
 COPY package.json .
-COPY npm-shrinkwrap.json .
+COPY package-lock.json .
 RUN NODE_ENV=production
 
 RUN npm install --only=production
