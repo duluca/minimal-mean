@@ -2,6 +2,10 @@ version: '3'
 services:
   web-app:
     build: web-app
+    #   dockerfile: Dockerfile
+    #   context: ../lemon-mart
+    # ports:
+    #   - '8080:3000'
     ports:
       - '8080:80'
     links:
@@ -20,7 +24,7 @@ services:
       - database
 
   database:
-    image: excellalabs/mongo:4.1.12
+    image: excellalabs/mongo:4.1.13
     env_file: .env
     ports:
       - '27017:27017'

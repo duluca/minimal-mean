@@ -8,10 +8,8 @@ RUN chmod +x /usr/local/bin/dumb-init
 
 RUN mkdir -p /usr/src/app
 
-RUN adduser -S nodejs
-RUN chown nodejs: /usr/src/app
-USER nodejs
-# RUN daemon with `dockerd --userns-remap=default`
+RUN chown node: /usr/src/app
+USER node
 
 WORKDIR /usr/src/app
 
