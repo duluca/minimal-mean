@@ -24,7 +24,7 @@ jobs:
 
       - run: npm run build
 
-      - run: npm test
+      # - run: npm test
 
       - run: tar zcf server/dist.tar.gz server-dist
 
