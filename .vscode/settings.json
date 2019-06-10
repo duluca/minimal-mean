@@ -1,25 +1,57 @@
-// Place your settings in this file to overwrite the default settings
 {
-  "editor.tabSize": 2,
-  "editor.rulers": [90, 140],
-  "files.trimTrailingWhitespace": true,
-  "files.autoSave": "onFocusChange",
-  "editor.cursorBlinking": "solid",
-  "workbench.iconTheme": "material-icon-theme",
-  "git.enableSmartCommit": true,
-  "editor.autoIndent": true,
   "debug.openExplorerOnEnd": true,
-  "auto-close-tag.SublimeText3Mode": true,
-  "explorer.openEditors.visible": 0,
-  "editor.minimap.enabled": false,
-  "html.autoClosingTags": false,
-  "git.confirmSync": false,
-  "editor.formatOnType": true,
+
+  "editor.tabSize": 2,
+  "editor.rulers": [90],
+  "editor.autoIndent": true,
+  "editor.cursorBlinking": "solid",
+  "editor.formatOnType": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "typescriptHero.resolver.insertSemicolons": false,
+  "editor.minimap.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false
+  },
+
+  "explorer.openEditors.visible": 0,
+
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onFocusChange",
+
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+
+  "npm.enableScriptExplorer": true,
+
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  "workbench.iconTheme": "material-icon-theme",
+
+  "auto-close-tag.SublimeText3Mode": true,
+  "html.autoClosingTags": false,
+
   "prettier.printWidth": 90,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "prettier.trailingComma": "es5"
+  "prettier.trailingComma": "es5",
+  "prettier.tslintIntegration": true,
+  "prettier.disableLanguages": ["html"],
+
+  "beautify.language": {
+    "html": ["html"]
+  },
+
+  "peacock.affectActivityBar": true,
+  "peacock.affectStatusBar": true,
+  "peacock.affectTitleBar": false,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#5b71fa",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#fca2af",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBar.background": "#2a46f8",
+    "statusBarItem.hoverBackground": "#5b71fa",
+    "statusBar.foreground": "#e7e7e7"
+  }
 }

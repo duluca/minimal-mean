@@ -3,8 +3,10 @@
   "version": "2.0.0",
   "description": "Easy to learn and use full-stack TypeScript with Angular",
   "main": "index.js",
-  "awsRegion": "us-east-1",
-  "awsEcsCluster": "excella-prod-ecs-cluster",
+  "config": {
+    "awsRegion": "us-east-1",
+    "awsEcsCluster": "excella-prod-ecs-cluster"
+  },
   "scripts": {
     "postinstall": "npm-recursive-install --skip-root",
     "build": "npm run build --prefix ./server && npm run build --prefix ./web-app -- --prod --env=prod",
@@ -13,8 +15,8 @@
     "start": "docker-compose up",
     "stop": "docker-compose down",
     "clean": "docker-compose rm",
-    "publish:aws": "with-package ecs-cli compose --file docker-compose.aws.yml -p pkg.name -c pkg.awsEcsCluster -r pkg.awsRegion create",
-    "start:database": "docker run --env-file .env -d -p '27017:27017' -v '/tmp/minimal-mean-db:/data/db' excellalabs/mongo:3.4.7",
+    "publish:aws": "cross-conf-env ecs-cli compose --file docker-compose.aws.yml -p $npm_package_name -c $npm_package_config_awsEcsCluster -r $npm_package_config_awsRegion create",
+    "start:database": "docker run --env-file .env -d -p '27017:27017' -v '/tmp/minimal-mean-db:/data/db' excellalabs/mongo",
     "rimraf": "rimraf node_modules && rimraf server/node_modules && rimraf web-app/node_modules"
   },
   "repository": {
@@ -34,8 +36,8 @@
   },
   "homepage": "https://github.com/excellalabs/minimal-mean#readme",
   "devDependencies": {
+    "cross-conf-env": "^1.1.2",
     "recursive-install": "^1.4.0",
-    "rimraf": "^2.6.1",
-    "with-package": "^0.2.0"
+    "rimraf": "^2.6.1"
   }
 }
