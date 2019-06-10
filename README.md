@@ -4,6 +4,8 @@ Easy to learn and use full-stack TypeScript with Angular
 
 **Watch the video:** [Do More with Less: Full Stack TypeScript](https://youtu.be/gi1neXh0uKE?list=PLtevgo7IoQizTQdXtRKEXGguTQbL0F01_)
 
+**Get the book:** Minimal MEAN is referenced in my book _Angular for Enterprise-Ready Web Applications_. You can get it on https://AngularForEnterprise.com.
+
 > Looking for Angular 1.5 Material starter? See demo at http://ng15demo.thejavascriptpromise.com/ and get the source code at https://github.com/duluca/angular1.5-starter
 
 ## Getting Started
