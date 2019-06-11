@@ -7,11 +7,11 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MaterialModule } from "@angular/material"
 
 import 'hammerjs'
 import { HomeComponent } from './home/home.component'
 import { UsersComponent } from './users/users.component'
+import { MaterialModule } from './material.module';
 
 const appRoutes: Routes = [
   { path: '',

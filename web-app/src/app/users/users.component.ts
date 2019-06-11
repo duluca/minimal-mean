@@ -1,23 +1,23 @@
-import { IUser, UsersService } from '../services/users.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { IPaginatedData, IUser, UsersService } from '../services/users.service'
+
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  template: `
+    <h2>All Users</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let user of users$ | async">
+        <span>{{user.fullName}}</span>
+      </mat-list-item>
+    </mat-list>
+  `,
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent {
+  users$: Observable<IPaginatedData<IUser>>
 
-  constructor(private usersService: UsersService) { }
-
-  users: IUser[]
-
-  ngOnInit() {
-    this.usersService.getUsers().subscribe(
-      res => {
-        this.users = res.data
-      }
-    )
+  constructor(private usersService: UsersService) {
+    this.users$ = this.usersService.getUsers()
   }
-
 }
