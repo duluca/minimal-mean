@@ -1,54 +1,69 @@
-import { IDocument, Document, CollectionFactory } from 'document-ts'
+import { CollectionFactory, Document, IDocument } from 'document-ts'
+
 import { ObjectID } from 'mongodb'
 import { v4 as uuid } from 'uuid'
 
 var bcrypt = require('bcryptjs')
 
 export interface IUser extends IDocument {
-  email: string,
-  firstName: string,
-  lastName: string,
+  email: string
+  firstName: string
+  lastName: string
   role: string
 }
 
 export class User extends Document<IUser> implements IUser {
   static collectionName = 'users'
 
-  private password: string
+  private password = ''
 
-  public email: string
-  public firstName: string
-  public lastName: string
-  public role: string
-
-  constructor(user?: IUser) {
-    super(User.collectionName, user)
+  constructor(
+    public email = '',
+    public firstName = '',
+    public lastName = '',
+    public role = ''
+  ) {
+    super(User.collectionName, { email, firstName, lastName, role } as IUser)
   }
 
-  getCalculatedPropertiesToInclude(): string[]{
-      return ['fullName']
+  public static Builder(user: IUser) {
+    if (!user) {
+      return new User()
+    }
+
+    return new User(user.email, user.firstName, user.lastName, user.role)
   }
 
-  getPropertiesToExclude(): string[]{
-      return ['password']
+  getCalculatedPropertiesToInclude(): string[] {
+    return ['fullName']
+  }
+
+  getPropertiesToExclude(): string[] {
+    return ['password']
   }
 
   public get fullName(): string {
     return `${this.firstName} ${this.lastName}`
   }
 
-  async create(firstName: string, lastName: string, email: string, role: string, password?: string) {
-      this.firstName = firstName
-      this.lastName = lastName
-      this.email = email
-      this.role = role
+  async create(
+    firstName: string,
+    lastName: string,
+    email: string,
+    role: string,
+    password?: string
+  ) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.email = email
+    this.role = role
 
-      if(!password) {
-          password = uuid()
-      }
+    if (!password) {
+      password = uuid()
+    }
 
-      this.password = await this.setPassword(password)
-      await this.save()
+    this.password = await this.setPassword(password)
+    await this.save()
   }
 
   async resetPassword(newPassword: string) {
@@ -57,24 +72,26 @@ export class User extends Document<IUser> implements IUser {
   }
 
   private setPassword(newPassword: string): Promise<string> {
-    return new Promise<string>(function(resolve, reject){
-        bcrypt.genSalt(10, function(err: Error, salt: string) {
-          if(err) {
+    return new Promise<string>(function(resolve, reject) {
+      bcrypt.genSalt(10, function(err: Error, salt: string) {
+        if (err) {
+          return reject(err)
+        }
+        bcrypt.hash(newPassword, salt, function(err: Error, hash: string) {
+          if (err) {
             return reject(err)
           }
-          bcrypt.hash(newPassword, salt, function(err: Error, hash: string) {
-            if(err) { return reject(err) }
-            resolve(hash)
-          })
+          resolve(hash)
         })
+      })
     })
   }
 
-  comparePassword(password: string): Promise<boolean>{
+  comparePassword(password: string): Promise<boolean> {
     let user = this
-    return new Promise(function(resolve, reject){
+    return new Promise(function(resolve, reject) {
       bcrypt.compare(password, user.password, function(err: Error, isMatch: boolean) {
-        if(err) {
+        if (err) {
           return reject(err)
         }
         resolve(isMatch)
@@ -88,9 +105,9 @@ export class User extends Document<IUser> implements IUser {
 }
 
 class UserCollectionFactory extends CollectionFactory<User> {
-    constructor(docType: typeof User) {
-        super(User.collectionName, docType, [ 'firstName', 'lastName', 'email' ])
-    }
+  constructor(docType: typeof User) {
+    super(User.collectionName, docType, ['firstName', 'lastName', 'email'])
+  }
 }
 
 export let UserCollection = new UserCollectionFactory(User)

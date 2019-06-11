@@ -53,5 +53,15 @@
     "statusBar.background": "#2a46f8",
     "statusBarItem.hoverBackground": "#5b71fa",
     "statusBar.foreground": "#e7e7e7"
+  },
+
+  "files.exclude": {
+    "server/**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "server/**/*.js.map": {
+      "when": "$(basename)"
+    }
   }
+
 }
