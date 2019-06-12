@@ -86,7 +86,7 @@
     "jasmine": "^3.4.0",
     "jasmine-core": "^3.4.0",
     "jasmine-spec-reporter": "^4.2.1",
-    "mongo-in-memory": "0.0.5",
+    "mongodb-memory-server": "^5.1.4",
     "npm-check-updates": "^3.1.10",
     "npm-run-all": "^4.1.5",
     "typescript": "^3.5.1"

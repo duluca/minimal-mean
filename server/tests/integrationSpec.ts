@@ -1,31 +1,27 @@
-import { Instance } from '../src/server'
-import { connect } from 'document-ts'
+import { close, connect } from 'document-ts'
 
-const MongoInMemory = require('mongo-in-memory')
+import { MongoMemoryServer } from 'mongodb-memory-server'
+
+let mongoServerInstance: MongoMemoryServer
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
 
 describe('Integration', function() {
-  let mongoServerInstance: any
-  const port = 28000
-
-  beforeEach(done => {
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
-    mongoServerInstance = new MongoInMemory(port)
-    mongoServerInstance.start((error, config) => {
-      done()
-    })
+  beforeEach(async () => {
+    mongoServerInstance = new MongoMemoryServer({ instance: { dbName: 'testDb' } })
+    const uri = await mongoServerInstance.getConnectionString()
+    await connect(uri)
   })
 
-  afterEach(done => {
-    mongoServerInstance.stop(error => {
-      done()
-    })
+  afterEach(async () => {
+    await close()
+    await mongoServerInstance.stop()
   })
 
   // See DocumentTS for more complete examples of integration tests
   // https://github.com/duluca/DocumentTS/tree/master/tests
-  it('should open a connection with a dummy database name', async done => {
-    let uri = mongoServerInstance.getMongouri('testDb')
-    await connect(uri)
-    done()
+  it('should open a connection with a dummy database name', async () => {
+    const runningInstance = await mongoServerInstance.runningInstance
+
+    expect(runningInstance).toBeTruthy()
   })
 })
