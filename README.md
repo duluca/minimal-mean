@@ -1,7 +1,6 @@
-# Minimal MEAN
+# Minimal MEAN 2
 
 Easy to learn and use full-stack TypeScript with Angular
-[Demo Site](http://minimalmean.excellalabs.com/)
 
 **Watch the video:** [Do More with Less: Full Stack TypeScript](https://youtu.be/gi1neXh0uKE?list=PLtevgo7IoQizTQdXtRKEXGguTQbL0F01_)
 
@@ -17,7 +16,7 @@ It can be daunting to pick the right stack to deliver your idea to the cloud. Wi
 
 **Angular vs React Video:** [Angular vs React: An Out-of-the-Box Comparison](https://youtu.be/IQr5STWB_HM?list=PLtevgo7IoQizTQdXtRKEXGguTQbL0F01_)
 
-## Pre-requisite
+## Pre-requisites
 
 * Install [Docker CE](https://www.docker.com/community-edition)
 * Read more about why Docker is important [here](https://gist.github.com/duluca/25de70e41347f38b2283ef90ed69840a)
