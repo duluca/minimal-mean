@@ -10,13 +10,15 @@
   "scripts": {
     "postinstall": "npm-recursive-install --skip-root",
     "build": "npm run build --prefix ./server && npm run build --prefix ./web-app -- --prod",
-    "test": "npm test --prefix ./server && npm test --prefix ./web-app -- --single-run",
+    "test": "npm test --prefix ./server && npm test --prefix ./web-app -- --watch=false",
     "prestart": "npm run build && docker-compose build",
     "start": "docker-compose up",
     "stop": "docker-compose down",
     "clean": "docker-compose rm",
+    "start:backend": "docker-compose -f docker-compose.backend.yml up --build",
+    "start:database": "docker-compose -f docker-compose.database.yml up --build",
     "publish:aws": "cross-conf-env ecs-cli compose --file docker-compose.aws.yml -p $npm_package_name -c $npm_package_config_awsEcsCluster -r $npm_package_config_awsRegion create",
-    "start:database": "docker run --env-file .env -d -p '27017:27017' -v '/tmp/minimal-mean-db:/data/db' excellalabs/mongo",
+    "start:docker:database": "docker run --env-file .env -d -p '27017:27017' -v '/tmp/minimal-mean-db:/data/db' excellalabs/mongo",
     "rimraf": "rimraf node_modules && rimraf server/node_modules && rimraf web-app/node_modules"
   },
   "repository": {
@@ -37,6 +39,7 @@
   "homepage": "https://github.com/excellalabs/minimal-mean#readme",
   "devDependencies": {
     "cross-conf-env": "^1.1.2",
+    "dev-norms": "^1.7.0",
     "recursive-install": "^1.4.0",
     "rimraf": "^2.6.1"
   }

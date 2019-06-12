@@ -60,6 +60,7 @@
     "@angular/compiler-cli": "^8.0.0",
     "@types/jasmine": "3.3.13",
     "@types/node": "~12.0.7",
+    "angular-unit-test-helper": "^1.4.1",
     "codelyzer": "~5.1.0",
     "cross-conf-env": "^1.1.2",
     "jasmine-core": "~3.4.0",
