@@ -1,6 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 .flex-spacer {
-  flex-grow: 1
-};
+  flex-grow: 1;
+}
+
+body {
+  margin: 0;
+}
+
+.vertical-margin {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

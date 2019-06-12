@@ -23,7 +23,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run build
-      # - run: npm test
-      # - run: tar zcf server/dist.tar.gz server-dist
-      # - store_artifacts:
-      #     path: server-dist.tar.gz
+      - run: npm test

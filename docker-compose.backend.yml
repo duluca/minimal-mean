@@ -1,0 +1,19 @@
+version: '3'
+services:
+  server:
+    build: server
+    env_file: .env
+    ports:
+      - '3000:3000'
+    links:
+      - database
+    depends_on:
+      - database
+
+  database:
+    image: excellalabs/mongo:4.1.13
+    env_file: .env
+    ports:
+      - '27017:27017'
+    volumes:
+      - '/tmp/minimal-mean-db:/data/db'

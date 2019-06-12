@@ -1,9 +1,10 @@
-import { User, IUser, UserCollection } from '../models/user'
+import { IUser, User, UserCollection } from '../models/user'
 
 export async function createNewUser(userData: IUser): Promise<User | boolean> {
-  let user = new User(userData)
+  // TODO: mongo transaction
+  let user = User.Builder(userData)
   let success = await user.save()
-  if(success) {
+  if (success) {
     return user
   } else {
     return false
