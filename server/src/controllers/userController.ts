@@ -6,7 +6,7 @@ import { createNewUser } from '../services/userService'
 const router = Router()
 
 router.get('/', async (req: Request, res: Response) => {
-  let users = await UserCollection.findWithPagination(
+  let users = await UserCollection.findWithPagination<User>(
     req.query,
     undefined,
     req.query.filter,

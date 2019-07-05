@@ -1,20 +1,19 @@
+import * as bcrypt from 'bcryptjs'
+
+import { AggregationCursor, ObjectID } from 'mongodb'
 import { CollectionFactory, Document, IDocument } from 'document-ts'
 
-import { ObjectID } from 'mongodb'
 import { v4 as uuid } from 'uuid'
 
-var bcrypt = require('bcryptjs')
-
 export interface IUser extends IDocument {
-  email: string
-  firstName: string
-  lastName: string
-  role: string
+  email?: string
+  firstName?: string
+  lastName?: string
+  role?: string
 }
 
 export class User extends Document<IUser> implements IUser {
   static collectionName = 'users'
-
   private password = ''
 
   constructor(
@@ -23,7 +22,12 @@ export class User extends Document<IUser> implements IUser {
     public lastName = '',
     public role = ''
   ) {
-    super(User.collectionName, { email, firstName, lastName, role } as IUser)
+    super(User.collectionName, {
+      email,
+      firstName,
+      lastName,
+      role,
+    } as IUser)
   }
 
   public static Builder(user: IUser) {
@@ -73,11 +77,11 @@ export class User extends Document<IUser> implements IUser {
 
   private setPassword(newPassword: string): Promise<string> {
     return new Promise<string>(function(resolve, reject) {
-      bcrypt.genSalt(10, function(err: Error, salt: string) {
+      bcrypt.genSalt(10, function(err, salt) {
         if (err) {
           return reject(err)
         }
-        bcrypt.hash(newPassword, salt, function(err: Error, hash: string) {
+        bcrypt.hash(newPassword, salt, function(err, hash) {
           if (err) {
             return reject(err)
           }
@@ -90,7 +94,7 @@ export class User extends Document<IUser> implements IUser {
   comparePassword(password: string): Promise<boolean> {
     let user = this
     return new Promise(function(resolve, reject) {
-      bcrypt.compare(password, user.password, function(err: Error, isMatch: boolean) {
+      bcrypt.compare(password, user.password, function(err, isMatch) {
         if (err) {
           return reject(err)
         }
@@ -107,6 +111,56 @@ export class User extends Document<IUser> implements IUser {
 class UserCollectionFactory extends CollectionFactory<User> {
   constructor(docType: typeof User) {
     super(User.collectionName, docType, ['firstName', 'lastName', 'email'])
+  }
+
+  async createIndexes() {
+    await this.collection().createIndexes([
+      {
+        key: {
+          email: 1,
+        },
+        unique: true,
+      },
+      {
+        key: {
+          firstName: 'text',
+          lastName: 'text',
+          email: 'text',
+        },
+        weights: {
+          lastName: 4,
+          firstName: 2,
+          email: 1,
+        },
+        name: 'TextIndex',
+      },
+    ])
+  }
+
+  // This is a contrived example for demonstration purposes
+  // It is possible to execute far more sophisticated and high performance queries using Aggregation in MongoDB
+  // Documentation: https://docs.mongodb.com/manual/aggregation/
+  userSearchQuery(
+    searchText: string
+  ): AggregationCursor<{ _id: ObjectID; email: string }> {
+    let aggregateQuery = [
+      {
+        $match: {
+          $text: { $search: searchText },
+        },
+      },
+      {
+        $project: {
+          email: 1,
+        },
+      },
+    ]
+
+    if (searchText === undefined || searchText === '') {
+      delete (aggregateQuery[0] as any).$match.$text
+    }
+
+    return this.collection().aggregate(aggregateQuery)
   }
 }
 
