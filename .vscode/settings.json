@@ -62,6 +62,8 @@
     "server/**/*.js.map": {
       "when": "$(basename)"
     }
-  }
+  },
+  "ng-evergreen.checkFrequency": "Daily",
+  "ng-evergreen.upgradeChannel": "Latest"
 
 }
