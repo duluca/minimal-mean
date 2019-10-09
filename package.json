@@ -41,6 +41,6 @@
     "cross-conf-env": "^1.1.2",
     "dev-norms": "^1.7.0",
     "recursive-install": "^1.4.0",
-    "rimraf": "^2.6.1"
+    "rimraf": "^3.0.0"
   }
 }
