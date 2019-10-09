@@ -8,6 +8,7 @@
     "awsEcsCluster": "excella-prod-ecs-cluster"
   },
   "scripts": {
+    "init:env": "init-dev-env generate-dot-env example.env -f && init-dev-env generate-dot-env server-example.env --source=. --target=server -f",
     "postinstall": "npm-recursive-install --skip-root",
     "build": "npm run build --prefix ./server && npm run build --prefix ./web-app -- --prod",
     "test": "npm test --prefix ./server && npm test --prefix ./web-app -- --watch=false",
@@ -38,9 +39,12 @@
   },
   "homepage": "https://github.com/duluca/minimal-mean#readme",
   "devDependencies": {
+    "@b1kt0p/dotenv-generator": "0.0.3",
     "cross-conf-env": "^1.1.2",
     "dev-norms": "^1.7.0",
+    "init-dev-env": "^1.0.0",
     "recursive-install": "^1.4.0",
     "rimraf": "^3.0.0"
-  }
+  },
+  "dependencies": {}
 }

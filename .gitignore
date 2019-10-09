@@ -37,4 +37,8 @@ server/**/*.js
 server/**/*.js.map
 
 .env
+.bak
 db-data
+
+!example.env
+!server-example.env
