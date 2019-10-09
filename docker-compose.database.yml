@@ -1,7 +1,7 @@
 version: '3'
 services:
   database:
-    image: excellalabs/mongo:4.1.13
+    image: excellalabs/mongo:4.2.0
     env_file: .env
     ports:
       - '27017:27017'

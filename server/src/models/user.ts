@@ -12,6 +12,43 @@ export interface IUser extends IDocument {
   role?: string
 }
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       required:
+ *         - email
+ *         - firstName
+ *         - lastName
+ *         - role
+ *       properties:
+ *         email:
+ *           type: string
+ *           format: email
+ *         firstName:
+ *           type: string
+ *         lastName:
+ *           type: string
+ *         role:
+ *           type: string
+ *         password:
+ *           type: string
+ *           format: password
+ *     Users:
+ *       type: object
+ *       properties:
+ *         total:
+ *           type: number
+ *           format: int32
+ *       items:
+ *         $ref: "#/components/schemas/ArrayOfUser"
+ *     ArrayOfUser:
+ *       type: array
+ *       items:
+ *         $ref: "#/components/schemas/User"
+ */
 export class User extends Document<IUser> implements IUser {
   static collectionName = 'users'
   private password = ''

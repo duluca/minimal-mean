@@ -1,10 +1,14 @@
 # Minimal MEAN 2
 
-Easy to learn and use full-stack TypeScript with Angular
+> Easy to learn and use full-stack TypeScript with Angular
+
+[![CircleCI](https://circleci.com/gh/duluca/minimal-mean/tree/master.svg?style=svg)](https://circleci.com/gh/duluca/minimal-mean/tree/master)
 
 **Watch the video:** [Do More with Less: Full Stack TypeScript](https://youtu.be/gi1neXh0uKE?list=PLtevgo7IoQizTQdXtRKEXGguTQbL0F01_)
 
 **Get the book:** Minimal MEAN is referenced in my book _Angular for Enterprise-Ready Web Applications_. You can get it on https://AngularForEnterprise.com.
+
+**[Lemon Mart Server](https://github.com/duluca/lemon-mart-server):** Complementing the [Lemon Mart](https://github.com/duluca/lemon-mart) project, this server implementation contains realistic examples using a similar server configuration.
 
 ## Getting Started
 
@@ -28,8 +32,7 @@ It can be daunting to pick the right stack to deliver your idea to the cloud. Wi
 * Install [Node.js](https://nodejs.org/en/) v8.3+
 * Recommended Editor/IDE: [Visual Studio Code](https://code.visualstudio.com/)
 * For a **magical** development experience download these VS Code Extensions:
-  * [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
-  * [Angular TypeScript Snippets](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2)
+  * Configure my preferred [extentions.json](https://gist.github.com/duluca/6bbd3c687beb6c84cb475fdf3eaa06f0#file-extensions-json) and [settings.json](https://gist.github.com/duluca/6bbd3c687beb6c84cb475fdf3eaa06f0#file-settings-json) files.
 * `npm install`
 * This will kick off a script, which will run `npm install` on all child folders.
 * Define a `.env` file at the root of the project and set the MongoDB admin passowrd. Do NOT commit this file.
@@ -88,13 +91,14 @@ MONGO_URI=mongodb://john.smith:g00fy@localhost:27017/acme
 
 ## Continuous Integration and Hosting
 
-* CI _will_ be implemented on CircleCI
+* CI is implemented on CircleCI [![CircleCI](https://circleci.com/gh/duluca/minimal-mean/tree/master.svg?style=svg)](https://circleci.com/gh/duluca/minimal-mean/tree/master)
 * Hosted on AWS ECS
   * You'll need to individually publish your Docker containers to ECS
   * Then update `docker-compose.aws.yml` to pull from the ECS repository
   * Run `npm run publish:aws` on the root folder to create the task definition
   * You'll need to create a new service and attach this task definition to it
-  * See the AWS ECS Guide on how to create container repositories, and attaching a task definition to a service: https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832
+  * See the [Step-by-Step AWS ECS Guide](https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832#file-step-by-step-how-to-for-aws-ecs-md) on how to create container repositories, and attaching a task definition to a service [here](https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832#file-step-by-step-how-to-for-aws-ecs-md).
+  * See the [Configuring AWS ECS to have access to AWS EFS Guide](https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832#file-awc-ecs-access-to-aws-efs-md) to persist data using MongoDB [here](https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832#file-awc-ecs-access-to-aws-efs-md).
 
 ## TODO
 

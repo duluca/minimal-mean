@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/excellalabs/minimal-mean.git"
+    "url": "git+https://github.com/duluca/minimal-mean.git"
   },
   "keywords": [
     "angular",
@@ -34,9 +34,9 @@
   "author": "Doguhan Uluca",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/excellalabs/minimal-mean/issues"
+    "url": "https://github.com/duluca/minimal-mean/issues"
   },
-  "homepage": "https://github.com/excellalabs/minimal-mean#readme",
+  "homepage": "https://github.com/duluca/minimal-mean#readme",
   "devDependencies": {
     "cross-conf-env": "^1.1.2",
     "dev-norms": "^1.7.0",

@@ -1,7 +1,7 @@
 import * as http from 'http'
 
 import app from './app'
-import userRouter from './controllers/userController'
+import userRouter from './routes/userRouter'
 
 // Configure all routers here
 app.use('/user', userRouter)

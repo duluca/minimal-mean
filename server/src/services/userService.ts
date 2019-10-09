@@ -1,4 +1,4 @@
-import { IUser, User, UserCollection } from '../models/user'
+import { IUser, User } from '../models/user'
 
 export async function createNewUser(userData: IUser): Promise<User | boolean> {
   // TODO: mongo transaction

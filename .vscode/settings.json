@@ -45,13 +45,13 @@
   "peacock.affectStatusBar": true,
   "peacock.affectTitleBar": false,
   "workbench.colorCustomizations": {
-    "activityBar.background": "#5b71fa",
+    "activityBar.background": "#5a71fa",
     "activityBar.foreground": "#e7e7e7",
     "activityBar.inactiveForeground": "#e7e7e799",
     "activityBarBadge.background": "#fca2af",
     "activityBarBadge.foreground": "#15202b",
-    "statusBar.background": "#2a46f8",
-    "statusBarItem.hoverBackground": "#5b71fa",
+    "statusBar.background": "#2946f8",
+    "statusBarItem.hoverBackground": "#5a71fa",
     "statusBar.foreground": "#e7e7e7"
   },
 
@@ -64,6 +64,7 @@
     }
   },
   "ng-evergreen.checkFrequency": "Daily",
-  "ng-evergreen.upgradeChannel": "Latest"
+  "ng-evergreen.upgradeChannel": "Latest",
+  "peacock.color": "#2946f8"
 
 }
