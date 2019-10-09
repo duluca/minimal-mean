@@ -13,8 +13,8 @@ USER node
 
 WORKDIR /usr/src/app
 
-COPY package.json .
-COPY package-lock.json .
+ADD package.json .
+ADD package-lock.json .
 RUN NODE_ENV=production
 
 RUN npm install --only=production
@@ -23,7 +23,7 @@ ENV HOST "0.0.0.0"
 ENV PORT 3000
 EXPOSE 3000
 
-COPY dist .
+ADD dist dist
 
 ENTRYPOINT ["dumb-init", "--"]
-CMD ["node", "index"]
+CMD ["node", "dist/index"]
