@@ -6,9 +6,14 @@ import { Observable } from 'rxjs'
 @Component({
   selector: 'app-users',
   template: `
+    <p class=".mat-caption">
+      If you used <b>docker-compose up</b>, Angular App should be at
+      <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>.
+    </p>
     <h2>All Users</h2>
     <div *ngIf="users$ | async as users">
-    <div>Found {{users.total}} user(s)</div>
+    <div>Found {{users.total}} user(s). To create users refer to instructions at
+      <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>.</div>
     <mat-list>
       <mat-list-item *ngFor="let user of users.data">
         <span>{{user.fullName}}</span>

@@ -1,14 +1,18 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-.flex-spacer {
-  flex-grow: 1;
-}
-
 body {
   margin: 0;
 }
 
-.vertical-margin {
+.margin-top {
   margin-top: 16px;
-  margin-bottom: 16px;
+}
+
+.horizontal-padding {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.flex-spacer {
+  flex: 1 1 auto;
 }
