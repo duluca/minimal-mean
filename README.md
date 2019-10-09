@@ -1,4 +1,4 @@
-# Minimal MEAN 2
+# Minimal MEAN 2.1
 
 > Easy to learn and use full-stack TypeScript with Angular
 

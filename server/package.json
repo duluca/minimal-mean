@@ -1,6 +1,6 @@
 {
   "name": "minimal-mean-server",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Easy to learn and use full-stack TypeScript with Mongo, Express, Angular and Node",
   "main": "index.js",
   "engines": {
