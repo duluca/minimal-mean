@@ -36,26 +36,26 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^8.0.0",
+    "@angular/animations": "^8.2.9",
     "@angular/cdk": "^8.0.1",
-    "@angular/common": "^8.0.0",
-    "@angular/compiler": "^8.0.0",
-    "@angular/core": "^8.0.0",
-    "@angular/forms": "^8.0.0",
+    "@angular/common": "^8.2.9",
+    "@angular/compiler": "^8.2.9",
+    "@angular/core": "^8.2.9",
+    "@angular/forms": "^8.2.9",
     "@angular/material": "^8.0.1",
-    "@angular/platform-browser": "^8.0.0",
-    "@angular/platform-browser-dynamic": "^8.0.0",
-    "@angular/router": "^8.0.0",
+    "@angular/platform-browser": "^8.2.9",
+    "@angular/platform-browser-dynamic": "^8.2.9",
+    "@angular/router": "^8.2.9",
     "core-js": "^3.1.3",
     "hammerjs": "^2.0.8",
-    "rxjs": "^6.5.2",
+    "rxjs": "^6.5.3",
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.800.2",
+    "@angular-devkit/build-angular": "^0.803.8",
     "@angular-devkit/core": "^8.0.2",
-    "@angular/cli": "^8.0.2",
-    "@angular/compiler-cli": "^8.0.0",
+    "@angular/cli": "^8.3.8",
+    "@angular/compiler-cli": "^8.2.9",
     "@types/jasmine": "3.3.13",
     "@types/jasminewd2": "^2.0.6",
     "@types/node": "~12.0.7",
@@ -75,6 +75,6 @@
     "protractor": "~5.4.2",
     "ts-node": "~8.2.0",
     "tslint": "~5.17.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.3"
   }
 }
