@@ -1,4 +1,4 @@
-# Minimal MEAN 2.1
+<img src="https://user-images.githubusercontent.com/822159/76695572-8fdc7880-6657-11ea-87ad-eb814cafcc8c.png" alt="Minimal MEAN" width="250"/>
 
 > Easy to learn and use full-stack TypeScript with Angular
 
