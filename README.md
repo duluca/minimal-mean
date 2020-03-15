@@ -1,14 +1,14 @@
 <img src="https://user-images.githubusercontent.com/822159/76695572-8fdc7880-6657-11ea-87ad-eb814cafcc8c.png" alt="Minimal MEAN" width="250"/>
 
-> Easy to learn and use full-stack TypeScript with Angular
-
 [![CircleCI](https://circleci.com/gh/duluca/minimal-mean/tree/master.svg?style=svg)](https://circleci.com/gh/duluca/minimal-mean/tree/master)
 
-**Watch the video:** [Do More with Less: Full Stack TypeScript](https://youtu.be/gi1neXh0uKE?list=PLtevgo7IoQizTQdXtRKEXGguTQbL0F01_)
+Easy to learn and use full-stack TypeScript with Angular
 
-**Get the book:** Minimal MEAN is referenced in my book _Angular for Enterprise-Ready Web Applications_. You can get it on https://AngularForEnterprise.com.
+> **Watch the video:** [Do More with Less: Full Stack TypeScript](https://youtu.be/gi1neXh0uKE?list=PLtevgo7IoQizTQdXtRKEXGguTQbL0F01_)
 
-**[Lemon Mart Server](https://github.com/duluca/lemon-mart-server):** Complementing the [Lemon Mart](https://github.com/duluca/lemon-mart) project, this server implementation contains realistic examples using a similar server configuration.
+> **Get the book:** Minimal MEAN is referenced in my book _Angular for Enterprise-Ready Web Applications_. You can get it on https://AngularForEnterprise.com.
+
+> **[Lemon Mart Server](https://github.com/duluca/lemon-mart-server):** Complementing the [Lemon Mart](https://github.com/duluca/lemon-mart) project, this server implementation contains realistic examples using a similar server configuration.
 
 ## Getting Started
 
