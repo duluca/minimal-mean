@@ -21,11 +21,13 @@ jobs:
             node: '12'
             container_port: 3000
             expected: "Server is up and running"
+            needs_mongo: 'true'
           - subdir: web-app
             image: minimal-mean-web-app
             node: '12'
             container_port: 80
             expected: "Minimal MEAN Web App"
+            needs_mongo: 'false'
     steps:
       - uses: actions/checkout@v4
 
@@ -45,24 +47,39 @@ jobs:
         working-directory: ${{ matrix.subdir }}
         run: docker build -t local-test:${{ github.sha }} .
 
+      - name: Start mongo sidecar
+        if: matrix.needs_mongo == 'true'
+        run: |
+          docker network create testnet
+          docker run -d --name testmongo --network testnet mongo:5
+          sleep 3
+
       - name: Smoke test - container starts and stays up
         run: |
-          docker run -d --name testc -p 8080:${{ matrix.container_port }} local-test:${{ github.sha }}
+          extra=""
+          if [ "${{ matrix.needs_mongo }}" = "true" ]; then
+            extra="--network testnet -e MONGO_URI=mongodb://testmongo:27017/test"
+          fi
+          docker run -d --name testc $extra -p 8080:${{ matrix.container_port }} local-test:${{ github.sha }}
           sleep 5
           docker ps --filter "name=testc" --filter "status=running" --format '{{.Names}}' | grep -q testc \
             || (echo "container exited"; docker logs testc; exit 1)
 
       - name: Endpoint check
         run: |
-          for i in 1 2 3 4 5; do
+          for i in 1 2 3 4 5 6 7 8 9 10; do
             if curl -fsS http://localhost:8080/ -o /tmp/body; then break; fi
             sleep 2
           done
-          grep -qi "${{ matrix.expected }}" /tmp/body || (echo "expected content missing:"; cat /tmp/body; exit 1)
+          grep -qi "${{ matrix.expected }}" /tmp/body \
+            || (echo "expected content missing. Container logs:"; docker logs testc; echo "Response body:"; cat /tmp/body 2>/dev/null || echo "(no body)"; exit 1)
 
       - name: Cleanup
         if: always()
-        run: docker rm -f testc 2>/dev/null || true
+        run: |
+          docker rm -f testc 2>/dev/null || true
+          docker rm -f testmongo 2>/dev/null || true
+          docker network rm testnet 2>/dev/null || true
 
   auto-merge:
     needs: build-test
