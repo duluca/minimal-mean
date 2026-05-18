@@ -89,4 +89,4 @@ jobs:
       - name: Auto-merge PR
         env:
           GH_TOKEN: ${{ secrets.AUTOMERGE_PAT }}
-        run: gh pr merge ${{ github.event.pull_request.number }} --squash --delete-branch -R ${{ github.repository }}
+        run: gh pr merge ${{ github.event.pull_request.number }} --squash --delete-branch --admin -R ${{ github.repository }}
