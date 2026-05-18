@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-RUN apk add --update --no-progress make python bash
+RUN apk add --update --no-progress make python3 bash
 ENV NPM_CONFIG_LOGLEVEL error
 
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 /usr/local/bin/dumb-init
@@ -13,8 +13,8 @@ USER node
 
 WORKDIR /usr/src/app
 
-ADD package.json .
-ADD package-lock.json .
+ADD --chown=node:node package.json .
+ADD --chown=node:node package-lock.json .
 RUN NODE_ENV=production
 
 RUN npm install --only=production
@@ -23,7 +23,7 @@ ENV HOST "0.0.0.0"
 ENV PORT 3000
 EXPOSE 3000
 
-ADD dist dist
+ADD --chown=node:node dist dist
 
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["node", "dist/index"]
