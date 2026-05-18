@@ -16,10 +16,24 @@ jobs:
         include:
           - subdir: server
             image: minimal-mean-server
+            node: '12'
           - subdir: web-app
             image: minimal-mean-web-app
+            node: '12'
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: npm install
+        working-directory: ${{ matrix.subdir }}
+        run: npm install --legacy-peer-deps --no-audit --no-fund
+
+      - name: npm run build
+        working-directory: ${{ matrix.subdir }}
+        run: npm run build
 
       - uses: docker/login-action@v3
         with:

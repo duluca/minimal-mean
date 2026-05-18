@@ -18,14 +18,28 @@ jobs:
         include:
           - subdir: server
             image: minimal-mean-server
+            node: '12'
             container_port: 3000
             expected: "Server is up and running"
           - subdir: web-app
             image: minimal-mean-web-app
+            node: '12'
             container_port: 80
             expected: "Minimal MEAN Web App"
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: npm install
+        working-directory: ${{ matrix.subdir }}
+        run: npm install --legacy-peer-deps --no-audit --no-fund
+
+      - name: npm run build
+        working-directory: ${{ matrix.subdir }}
+        run: npm run build
 
       - name: Build image
         working-directory: ${{ matrix.subdir }}
